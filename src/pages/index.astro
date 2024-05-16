@@ -1,16 +1,57 @@
 ---
+import OverviewLayout from "../layouts/OverviewLayout.astro";
+import CardOverview from "../components/CardOverview.astro";
+import ShowMore from "../components/ShowMore.astro";
+import "../styles/overview.css";
+import "../styles/general.css";
 
+export async function getStaticPaths() {
+  const url = "";
+  const options = {
+    headers: {
+      apikey: "",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data.map((products) => {
+    return {
+      params: { slug: products.slug },
+      props: { products },
+    };
+  });
+}
+const { products, category, title } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<OverviewLayout title="WEBSHOP">
+  <div class="start-text1">
+    <h1>WEBSHOP</h1>
+    <img src="img/flower.webp" alt="flower illustration" />
+  </div>
+  <div class="start-text2">
+    <p>
+      Velkommen til min webshop! Træd ind i en verden af unikke <br /> kunstværker, skabt med kærlighed og passion. Udforsk en samling <br /> af malerier,
+      der fanger øjet og berører sjælen. Hvert stykke er en <br />
+      fortælling, en rejse, og en unik skat at tage med hjem.
+    </p>
+  </div>
+  <div class="btn">
+    <button class="category1">Lærred</button>
+    <button class="category2">Plakat</button>
+    <button class="category3">Tryk</button>
+    <button class="filter">Filter <img src="img/overview/filtering.webp" alt="filter" /></button>
+  </div>
+  <div class="cards_list">
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <ShowMore />
+  </div>
+</OverviewLayout>
