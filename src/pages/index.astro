@@ -5,28 +5,6 @@ import CatFilterButtons from "../components/CatFilterButtons.astro";
 import ShowMore from "../components/ShowMore.astro";
 import "../styles/overview.css";
 import "../styles/general.css";
-
-// Fetch data from Supabase
-const url = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/painting", {
-  method: "GET",
-  headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
-  },
-});
-
-fetch(url)
-  .then((response) => response.json())
-  .then(showLists);
-
-function showLists(paintings) {
-  console.log(paintings); // Add this line
-  paintings.forEach(showList);
-}
-
-function showList(painting) {
-  console.log(painting);
-}
 ---
 
 <OverviewLayout title="WEBSHOP">
@@ -45,17 +23,18 @@ function showList(painting) {
     <CatFilterButtons />
   </div>
   <div class="cards_list">
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-    <CardOverview name={painting.name} />
-  </div>
-  <div class="show_more">
-    <ShowMore />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview />
+    <CardOverview>
+      <CardOverview />
+      <CardOverview />
+    </CardOverview>
+    <div class="show_more">
+      <ShowMore />
+    </div>
   </div>
 </OverviewLayout>
