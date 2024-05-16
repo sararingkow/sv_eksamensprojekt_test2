@@ -1,17 +1,14 @@
 ---
-const { name } = Astro.props;
-const { image } = Astro.props;
-const { price } = Astro.props;
-const { buttontext } = Astro.props;
+const { name, image, price } = Astro.props;
+const products = Astro.props;
 ---
 
 <div class="card">
-  <img src="picsum.com" alt="random image" />
-
+  <img src="https://picsum.photos/300/200" alt="random image" />
   <div class="overlay">
-    <h1>{name}</h1>
-    <p class="price">{price}</p>
-    <p><button>{buttontext}</button></p>
+    <h1>{products.name}</h1>
+    <p class="price">{products.price}</p>
+    <p><button>Læs mere..</button></p>
   </div>
 </div>
 

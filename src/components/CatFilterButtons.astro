@@ -1,0 +1,39 @@
+---
+const { category } = Astro.props;
+---
+
+<div class="btn">
+  <button class="category1">{category}</button>
+  <button class="category2">{category}</button>
+  <button class="category3">{category}</button>
+  <button class="filter">Filter <img src="img/overview/filtering.webp" alt="filter" /></button>
+</div>
+
+<style>
+  .btn button {
+    border: 0;
+    background-color: #ffff;
+    font-family: "Lato";
+    font-size: 15px;
+    color: #494242;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .btn button:hover {
+    background-color: #dadada;
+    cursor: pointer;
+  }
+
+  .btn button:active {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+    background-color: #dadada;
+  }
+
+  .filter img {
+    width: 16px;
+  }
+</style>

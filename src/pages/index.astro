@@ -1,27 +1,20 @@
 ---
 import OverviewLayout from "../layouts/OverviewLayout.astro";
 import CardOverview from "../components/CardOverview.astro";
+import CatFilterButtons from "../components/CatFilterButtons.astro";
 import ShowMore from "../components/ShowMore.astro";
 import "../styles/overview.css";
 import "../styles/general.css";
 
-export async function getStaticPaths() {
-  const url = "";
-  const options = {
-    headers: {
-      apikey: "",
-    },
-  };
-  const response = await fetch(url, options);
-  const data = await response.json();
-  return data.map((products) => {
-    return {
-      params: { slug: products.slug },
-      props: { products },
-    };
-  });
-}
-const { products, category, title } = Astro.props;
+const response = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
+  },
+}).then((res) => res.json());
+
+console.log();
 ---
 
 <OverviewLayout title="WEBSHOP">
@@ -37,10 +30,7 @@ const { products, category, title } = Astro.props;
     </p>
   </div>
   <div class="btn">
-    <button class="category1">Lærred</button>
-    <button class="category2">Plakat</button>
-    <button class="category3">Tryk</button>
-    <button class="filter">Filter <img src="img/overview/filtering.webp" alt="filter" /></button>
+    <CatFilterButtons />
   </div>
   <div class="cards_list">
     <CardOverview />
@@ -52,6 +42,8 @@ const { products, category, title } = Astro.props;
     <CardOverview />
     <CardOverview />
     <CardOverview />
+  </div>
+  <div class="show_more">
     <ShowMore />
   </div>
 </OverviewLayout>
