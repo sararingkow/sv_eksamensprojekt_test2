@@ -5,6 +5,16 @@ import CatFilterButtons from "../components/CatFilterButtons.astro";
 import ShowMore from "../components/ShowMore.astro";
 import "../styles/overview.css";
 import "../styles/general.css";
+
+const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paintings", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
+  },
+}).then((res) => res.json());
+
+console.log(data);
 ---
 
 <OverviewLayout title="WEBSHOP">
