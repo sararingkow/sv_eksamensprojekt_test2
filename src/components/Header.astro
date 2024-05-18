@@ -6,7 +6,7 @@
   <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
   <div class="navbar" id="myNavbar">
     <div class="logo">
-      <a href="/"><img src="img/footer_logo.webp" alt="logo" /></a>
+      <a href="/"><img src="/img/footer_logo.webp" alt="logo" /></a>
     </div>
     <div class="navbar_menu">
       <a href="/overview/">SHOP</a>
@@ -45,6 +45,7 @@
     gap: 10px;
     width: 100%;
     font-family: "Lato";
+    background-color: #ecf0e4;
   }
   .navbar_menu {
     padding: 20px;
@@ -60,10 +61,9 @@
   .navbar a:hover {
     color: #f20056;
   }
-  a,
-  .search-icon {
+  a {
     text-decoration: none;
-    color: #f2f2f2;
+    color: #494242;
   }
   .logo {
     align-items: center;
@@ -75,12 +75,13 @@
     opacity: 70%;
   }
 
-  body.dark {
-    background-color: #292c35;
+  body.dark,
+  body.dark .navbar {
+    background-color: #494242;
   } /* #9b59b6 */
 
   body.dark h1,
-  body.dark .support a {
+  body.dark a {
     color: #fff;
   }
 
@@ -90,7 +91,7 @@
   }
 
   .checkbox-label {
-    background-color: #494242;
+    background-color: #191717;
     width: 50px;
     height: 26px;
     border-radius: 50px;
