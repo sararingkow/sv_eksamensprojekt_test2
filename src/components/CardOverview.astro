@@ -6,7 +6,7 @@ const { data } = Astro.props;
   <img src={data.image} alt="random image" />
   <div class="overlay">
     <h1>{data.name}</h1>
-    <p class="price">{data.price} DKK</p>
+    <p class="price">{data.price} kr.</p>
     <p><button>Læs mere..</button></p>
   </div>
 </div>
@@ -16,7 +16,7 @@ const { data } = Astro.props;
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fafafa;
-    height: 466px;
+    height: 550px;
     width: 392px;
     border-radius: 10px;
     text-align: left;
@@ -34,7 +34,7 @@ const { data } = Astro.props;
 
   .card img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     border-radius: 10px 10px 0 0;
     object-fit: cover;
   }
