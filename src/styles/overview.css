@@ -2,6 +2,7 @@
 body {
   background-image: url("img//overview/gradient.webp");
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .cards_list {

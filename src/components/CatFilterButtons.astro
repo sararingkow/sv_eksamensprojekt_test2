@@ -1,16 +1,18 @@
 ---
 const data = Astro.props;
+console.log("Astro.props:", data);
 ---
 
-<div class="btn">
-  <button class="category1">{data.category}</button>
-  <button class="category2">{data.category}</button>
-  <button class="category3">{data.category}</button>
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('Plakat')"> Plakat</button>
+  <button class="btn1" onclick="filterSelection('Lærred')"> Lærred</button>
+  <button class="btn2" onclick="filterSelection('Tryk')"> Tryk</button>
+  <button class="btn3" onclick="filterSelection('Serie')"> Serie</button>
   <button class="filter">Filter <img src="img/overview/filtering.webp" alt="filter" /></button>
 </div>
 
 <style>
-  .btn button {
+  button {
     border: 0;
     background-color: #ffff;
     font-family: "Lato";
@@ -23,17 +25,25 @@ const data = Astro.props;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   }
 
-  .btn button:hover {
+  button:hover {
     background-color: #dadada;
     cursor: pointer;
   }
 
-  .btn button:active {
+  button:active {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
     background-color: #dadada;
   }
 
   .filter img {
     width: 16px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .btn1,
+    .btn2,
+    .btn3 {
+      display: none;
+    }
   }
 </style>
