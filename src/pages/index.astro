@@ -12,13 +12,7 @@ const data = await fetch("https://iquwaksrvuailrbwzeqm.supabase.co/rest/v1/paint
     apikey:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxdXdha3NydnVhaWxyYnd6ZXFtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MDgyNzEsImV4cCI6MjAzMTE4NDI3MX0.TAN2h-nqq62fwRfrJesymEvsWNpJv_HsJnaiA0kzups",
   },
-})
-  .then((res) => res.json())
-  .then(ShowLists);
-
-function ShowLists(products) {
-  console.log(products);
-}
+}).then((res) => res.json());
 ---
 
 <OverviewLayout title="WEBSHOP">
@@ -37,16 +31,13 @@ function ShowLists(products) {
     <CatFilterButtons />
   </div>
   <div class="cards_list">
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
-    <CardOverview />
+    {
+      data.map((data) => {
+        return <CardOverview data={data} />;
+      })
+    }
   </div>
+
   <div class="show_more">
     <ShowMore />
   </div>
