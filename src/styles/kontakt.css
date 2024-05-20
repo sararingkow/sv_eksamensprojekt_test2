@@ -30,15 +30,6 @@ h1 {
   gap: 20px;
 }
 
-.socials {
-  display: flex;
-  gap: 20px;
-}
-
-.socials img {
-  width: 45px;
-}
-
 .illustration {
   display: flex;
   justify-content: left;
