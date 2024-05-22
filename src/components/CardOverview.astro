@@ -2,28 +2,29 @@
 const { data } = Astro.props;
 ---
 
-<div class="card">
+<a class="card" href={"../singleview/" + data.slug}>
   <img src={data.image} alt="random image" />
   <div class="overlay">
     <h1>{data.name}</h1>
     <p class="price">{data.price} kr.</p>
     <p><button>Læs mere..</button></p>
   </div>
-</div>
+</a>
 
 <style>
   /* CARD STYLING */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fafafa;
-    height: 550px;
-    width: 392px;
+    height: 370px;
+    width: 290px;
     border-radius: 10px;
     text-align: left;
     font-family: "Lato";
     line-height: 1.8;
     border-radius: 10px;
     transition: 0.6s;
+    text-decoration: none;
   }
 
   .card:hover {
@@ -34,14 +35,15 @@ const { data } = Astro.props;
 
   .card img {
     width: 100%;
-    height: 350px;
+    height: 192px;
     border-radius: 10px 10px 0 0;
+    zoom: 100%;
     object-fit: cover;
   }
 
   .price {
     color: #494242;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .overlay {
@@ -49,7 +51,7 @@ const { data } = Astro.props;
   }
 
   .overlay h1 {
-    font-size: 22.5px;
+    font-size: 18px;
     font-family: "Lato";
     color: #494242;
     font-weight: 600;
@@ -65,8 +67,8 @@ const { data } = Astro.props;
     color: #494242;
     text-align: left;
     cursor: pointer;
-    width: 110px;
-    font-size: 15px;
+    width: 90px;
+    font-size: 12px;
     border-radius: 10px;
     margin-top: 30px;
     background-color: #ffdded;

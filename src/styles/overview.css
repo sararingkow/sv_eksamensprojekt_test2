@@ -1,15 +1,15 @@
 /* GENERAL */
 body {
-  background-image: url("img//overview/gradient.webp");
+  background-image: url("/img/gradient_overview.webp");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .cards_list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 40px;
-  gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 60px;
+  gap: 60px;
 }
 
 .start-text1 {
